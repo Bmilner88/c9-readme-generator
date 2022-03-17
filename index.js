@@ -28,6 +28,7 @@ THEN I am taken to the corresponding section of the README
 
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const { writeFile } = require('./utils/filegen.js');
 const markdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
@@ -121,6 +122,7 @@ const init = () => {
             name: 'license',
             message: 'Which license?',
             choices: [
+                'None',
                 'GNU AGPLv3',
                 'GNU GPLv3',
                 'GNU LGPLv3',
@@ -128,7 +130,7 @@ const init = () => {
                 'Apache License 2.0',
                 'MIT License',
                 'Boost Software License 1.0',
-                'The Unlicense',
+                'The Unlicense'
             ]
         },
         {
@@ -159,3 +161,15 @@ const init = () => {
 };
 
 init()
+    .then(readmeData => {
+        return markdown(readmeData);
+    })
+    .then(pageInfo => {
+        return writeFile(pageInfo);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+    })
+    .catch(err => {
+        console.log(err);
+});
