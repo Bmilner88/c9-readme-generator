@@ -123,14 +123,14 @@ const init = () => {
             message: 'Which license?',
             choices: [
                 'None',
-                'GNU AGPLv3',
-                'GNU GPLv3',
-                'GNU LGPLv3',
-                'Mozilla Public License 2.0',
-                'Apache License 2.0',
-                'MIT License',
-                'Boost Software License 1.0',
-                'The Unlicense'
+                'AGPL-3.0-or-later',
+                'GPL-3.0-or-later',
+                'LGPL-3.0-or-later',
+                'MPL-2.0',
+                'Apache-2.0',
+                'MIT',
+                'BSL-1.0',
+                'Unlicense'
             ]
         },
         {

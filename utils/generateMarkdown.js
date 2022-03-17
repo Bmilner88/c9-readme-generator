@@ -23,7 +23,8 @@ const renderLicense = license => {
 
     return `
     ## License
-
+    ${license}
+    ![image](https://img.shields.io/badge/license-${license}-brightgreen)
     [${license}](https://choosealicense.com/${license.toLowerCase()})
     `;
 };
