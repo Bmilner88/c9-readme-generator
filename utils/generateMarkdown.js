@@ -23,9 +23,8 @@ const renderLicense = license => {
 
     return `
     ## License
-    ${license}
-    ![image](https://img.shields.io/badge/license-${license}-brightgreen)
-    [${license}](https://choosealicense.com/${license.toLowerCase()})
+    [https://choosealicense.com/licenses/${license.toLowerCase()}](https://choosealicense.com/licenses/${license.toLowerCase()})
+    ![image](https://img.shields.io/badge/license-${license.replace('-', '--')}-brightgreen)
     `;
 };
 
@@ -81,12 +80,8 @@ module.exports = data => {
     ## Contributing
 
     ${genContribution(data.contribution)}
-    
-    ## License
 
-    The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
-    ---
+    ${renderLicense(data.license)}
 
     ## Badges
 
