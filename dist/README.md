@@ -1,5 +1,5 @@
 
-# wg
+# README Generator
 
 
 ![image](https://img.shields.io/badge/license-MIT-brightgreen)
@@ -7,29 +7,36 @@
 
 ## Description
 
-we
+A simple README.md generator built with JavaScript and Node.js
 
 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
 - [Testing](#testing)
-- [Questions](#questions)
+- [Usage](#usage)
 - [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
 
 
 ## Installation
 
 ~~~
-awg
+npm i
+~~~
+
+
+## Testing
+
+~~~
+node index
 ~~~
 
 
 ## Usage
 
-arg
+You must have Node.js installed to run the program!
 
 
 
@@ -43,11 +50,11 @@ A short and simple permissive license with conditions only requiring preservatio
 
 ## Contributing
 
-arg
+Contact about contributing to this project
 
 
 ## Questions
 
-[https://github.com/asdfafw](https://github.com/asdfafw)
+[https://github.com/Bmilner88](https://github.com/Bmilner88)
 
-If you have any questions or issues, you can reach me at: afwf
+If you have any questions or issues, you can reach me at: bmilner@email.com
