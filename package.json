@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "Unlicense\r ![image](https://img.shields.io/badge/license-AGPL--3.0-brightgreen)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/Bmilner88/c9-readme-generator/issues"
   },
-  "homepage": "https://github.com/Bmilner88/c9-readme-generator#readme"
+  "homepage": "https://github.com/Bmilner88/c9-readme-generator#readme",
+  "devDependencies": {}
 }

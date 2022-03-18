@@ -1,106 +1,110 @@
-/* // TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-const renderLicenseBadge = license => {
+const renderBadge = license => {
+    if(license === 'None') {
+        return ' ';
+    } 
 
+    return `
+![image](https://img.shields.io/badge/license-${license.replace('-', '--')}-brightgreen)
+`;
 };
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-const renderLicenseLink = license => {
-
-};
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-const renderLicenseSection = license => {
-
-}; */
 
 const renderLicense = license => {
     if(license === 'None') {
         return '';
+    } 
+
+    let licenseDesc;
+
+    switch(license) {
+        case 'AGPL-3.0':
+            licenseDesc = 'Permissions of this strongest copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. When a modified version is used to provide a service over a network, the complete source code of the modified version must be made available.';
+            break;
+        case 'GPL-3.0':
+            licenseDesc = 'Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.';
+            break;
+        case 'LGPL-3.0':
+            licenseDesc = 'Permissions of this copyleft license are conditioned on making available complete source code of licensed works and modifications under the same license or the GNU GPLv3. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work through interfaces provided by the licensed work may be distributed under different terms and without source code for the larger work.';
+            break;
+        case 'MPL-2.0':
+            licenseDesc = 'Permissions of this weak copyleft license are conditioned on making available source code of licensed files and modifications of those files under the same license (or in certain cases, one of the GNU licenses). Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work may be distributed under different terms and without source code for files added in the larger work.';
+            break;
+        case 'Apache-2.0':
+            licenseDesc = 'A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.';
+            break;
+        case 'MIT':
+            licenseDesc = 'A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.';
+            break;
+        case 'BSL-1.0':
+            licenseDesc = 'A simple permissive license only requiring preservation of copyright and license notices for source (and not binary) distribution. Licensed works, modifications, and larger works may be distributed under different terms and without source code.';
+            break;
+        case 'Unlicense':
+            licenseDesc = 'A license with no conditions whatsoever which dedicates works to the public domain. Unlicensed works, modifications, and larger works may be distributed under different terms and without source code.';
+            break;
     }
 
     return `
-    ## License
-    ${license}
-    ![image](https://img.shields.io/badge/license-${license}-brightgreen)
-    [${license}](https://choosealicense.com/${license.toLowerCase()})
-    `;
-};
+## License
 
-const genContribution = contribText => {
-    if(!contribText) {
-        return '';
-    }
+[https://choosealicense.com/licenses/${license.toLowerCase()}](https://choosealicense.com/licenses/${license.toLowerCase()})
 
-    return `
-        
-    `;
+${licenseDesc}
+`;
 };
 
 module.exports = data => {
     console.log(data);
-
-    /* const { title,
-        description,
-        installation,
-        usage,
-        confirmContribution,
-        contribution,
-        test,
-        license,
-        github,
-        email
-    } = data; */
-
-    return `
-    # ${data.title}
-
-    ## Description
-
-    ${data.description}
-
-    ## Table of Contents
-
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
-
-    ## Installation
-
-    ${data.installation}
-
-    ## Usage
-
-    ${data.usage}
-    Provide instructions and examples for use. Include screenshots as needed.
-    To add a screenshot, create an  folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ## Contributing
-
-    ${genContribution(data.contribution)}
     
-    ## License
+    return `
+# ${data.title}
 
-    The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+${renderBadge(data.license)}
 
-    ---
+## Description
 
-    ## Badges
+${data.description}
 
-    ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
 
-    Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+## Table of Contents
 
-    ## Features
+- [Installation](#installation)
+- [Testing](#testing)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
 
-    If your project has a lot of features, list them here.
 
-    ## How to Contribute
+## Installation
 
-    If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+~~~
+${data.install}
+~~~
 
-    `;
+
+## Testing
+
+~~~
+${data.test}
+~~~
+
+
+## Usage
+
+${data.usage}
+
+
+${renderLicense(data.license)}
+
+
+## Contributing
+
+${data.contribution}
+
+
+## Questions
+
+[https://github.com/${data.github}](https://github.com/${data.github})
+
+If you have any questions or issues, you can reach me at: ${data.email}
+`;
 };
