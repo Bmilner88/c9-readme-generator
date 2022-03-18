@@ -5,7 +5,9 @@ const renderLicense = license => {
 
     return `
     ## License
+
     [https://choosealicense.com/licenses/${license.toLowerCase()}](https://choosealicense.com/licenses/${license.toLowerCase()})
+
     ![image](https://img.shields.io/badge/license-${license.replace('-', '--')}-brightgreen)
     `;
 };
@@ -17,25 +19,14 @@ const genContribution = contribText => {
 
     return `
     ## Contributing
+
     ${contribText}
     `;
 };
 
 module.exports = data => {
     console.log(data);
-
-    /* const { title,
-        description,
-        installation,
-        usage,
-        confirmContribution,
-        contribution,
-        test,
-        license,
-        github,
-        email
-    } = data; */
-
+    
     return `
     # ${data.title}
 
@@ -47,7 +38,7 @@ module.exports = data => {
 
     - [Installation](#installation)
     - [Usage](#usage)
-    - [Credits](#credits)
+    - [Contribution](#contribution)
     - [License](#license)
 
     ## Installation
