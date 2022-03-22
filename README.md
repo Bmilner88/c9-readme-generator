@@ -48,4 +48,4 @@ Contact about contributing to this project
 
 ## Links
 
-* https://github.com/Bmilner88/c9-readme-generator
+* [Walkthrough Video](https://drive.google.com/file/d/1fk-QZOBPFZeY1ycwvCDzDQp3f09VefM4/view)
